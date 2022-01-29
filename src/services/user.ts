@@ -5,7 +5,7 @@ import userEntity from '../entities/user';
 // Export default
 export default {
     getUserInfoAsString,
-}
+};
 
 
 /**
