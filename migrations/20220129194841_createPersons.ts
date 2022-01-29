@@ -9,9 +9,9 @@ export async function up(knex: Knex): Promise<void> {
     // to do this. We create it here for simplicity.
     return knex.schema.createTable('users', table => {
         table.increments('id').primary();
-        table.string('email').unique();
-        table.string('name');
-        table.string('createdAt');
+        table.string('email', 255).unique();
+        table.string('name', 25);
+        table.string('createdAt', 50);
     });
 }
 

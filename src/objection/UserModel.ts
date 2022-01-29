@@ -6,16 +6,10 @@
 
 import { Model } from 'objection';
 import moment from 'moment';
+import { IUser } from '../entity/User';
 
 
-export interface IUser {
-    id: number;
-    email: string;
-    name: string;
-    createdAt: string;
-}
-
-export default class User extends Model implements IUser {
+export default class UserModel extends Model implements IUser {
 
     public id!: number;
     public email!: string;
@@ -26,6 +20,7 @@ export default class User extends Model implements IUser {
     public static get tableName() {
         return 'users';
     }
+
 
     // Optional JSON schema. This is not the database schema! Nothing is generated
     // based on this. This is only used for validation. Whenever a model instance
@@ -40,6 +35,7 @@ export default class User extends Model implements IUser {
             createdAt: { type: 'string' },
         },
     };
+
 
     // Intialize values here
     public $beforeInsert() {
@@ -57,47 +53,3 @@ export default class User extends Model implements IUser {
         return `Id: ${this.id}, Email: ${this.email}, Name: ${this.name}, Created: ${dateStr}`;
     }
 }
-
-
-
-// // User Interface
-// export interface IUser {
-//     id: number;
-//     email: string;
-//     name: string;
-//     created: Date;
-// }
-
-// // Export user entity
-// export default {
-//     getObj,
-//     toString,
-// };
-
-
-// /**
-//  * Get blank user object.
-//  * 
-//  * @param user 
-//  * @returns 
-//  */
-// function getObj(user?: IUser): IUser {
-//     return {
-//         id: user?.id ?? -1,
-//         email: user?.email ?? '',
-//         name: user?.name ?? '',
-//         created: user?.created ?? new Date(),
-//     };
-// }
-
-
-// /**
-//  * User entity to string.
-//  * 
-//  * @param user 
-//  * @returns 
-//  */
-// function toString(user: IUser): string {
-//     const dateStr = moment(user.created).format('MM/DD/YYYY');
-//     return `Id: ${user.id}, Email: ${user.email}, Name: ${user.name}, Created: ${dateStr}`;
-// }
