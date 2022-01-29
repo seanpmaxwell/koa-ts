@@ -1,10 +1,13 @@
 /**
+ * Define User Entity.
  * 
+ * created by Sean Maxwell, 1/28/2022
  */
 
 import moment from 'moment';
 
 
+// User Interface
 export interface IUser {
     id: number;
     email: string;
