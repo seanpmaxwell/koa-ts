@@ -1,5 +1,5 @@
 # About
-- Display TypeScript + Koa usage.
+Display TypeScript + Koa usage.
 
 
 #### Tutorials
