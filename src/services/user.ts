@@ -14,7 +14,7 @@ export default {
  * @param id 
  * @returns 
  */
-function getUserInfoAsString(id: number) {
+function getUserInfoAsString(id: number): string {
     const user = userDao.findById(id);
     return userEntity.toString(user);
 }

@@ -45,6 +45,6 @@ function getObj(user?: IUser): IUser {
  * @returns 
  */
 function toString(user: IUser): string {
-    const dateStr = moment(user.created).format('MM/DD/YYYY')
+    const dateStr = moment(user.created).format('MM/DD/YYYY');
     return `Id: ${user.id}, Email: ${user.email}, Name: ${user.name}, Created: ${dateStr}`;
 }
