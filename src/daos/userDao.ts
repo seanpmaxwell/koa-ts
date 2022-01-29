@@ -1,4 +1,4 @@
-import { IUser } from '../entity/userEntity';
+import { IUser } from '../entities/userEntity';
 import UserModel from '../objection/UserModel';
 import knex from './knex';
 
