@@ -10,7 +10,7 @@ import koaLogger from 'koa-logger';
 import json from 'koa-json';
 import logger from 'jet-logger';
 import bodyParser from 'koa-bodyparser';
-import staticLogger from './routes/static';
+import staticLogger from './routes/users';
 
 
 // Constants

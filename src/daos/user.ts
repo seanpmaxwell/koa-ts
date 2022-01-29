@@ -1,9 +1,10 @@
-import User from '../models/User';
+import User, { IUser } from '../models/User';
 
 
 // Export default
 export default {
     findById,
+    addOne,
 };
 
 
@@ -14,14 +15,6 @@ export default {
  * @returns 
  */
 async function findById(id: number): Promise<User | null> {
-
-    await User.query().insert({
-        email: 'foo@bar.com_' + Date.now(),
-        name: 'foo bar',
-        createdAt: new Date().toISOString(),
-    });
-
-
     const resp: User[] = await User.query()
         .where('id', id);
     if (resp.length > 0) {
@@ -29,4 +22,15 @@ async function findById(id: number): Promise<User | null> {
     } else {
         return null;
     }
+}
+
+
+/**
+ * Add one user.
+ * 
+ * @param user 
+ * @returns 
+ */
+async function addOne(user: IUser): Promise<User> {
+    return User.query().insert(user);
 }

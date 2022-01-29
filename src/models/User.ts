@@ -8,7 +8,14 @@ import { Model } from 'objection';
 import moment from 'moment';
 
 
-export default class User extends Model {
+export interface IUser {
+    id: number;
+    email: string;
+    name: string;
+    createdAt: string;
+}
+
+export default class User extends Model implements IUser {
 
     public id!: number;
     public email!: string;
@@ -25,7 +32,7 @@ export default class User extends Model {
     // is created it is checked against this schema. http://json-schema.org/.
     public static jsonSchema = {
         type: 'object',
-        required: ['email', 'name', 'createdAt'],
+        required: ['email', 'name'],
         properties: {
             id: { type: 'integer' },
             email: { type: 'string', minLength: 1, maxLength: 255 },
