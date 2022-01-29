@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import userService from '../services/user';
+import userService from '../services/userService';
 
 
 // Constants
@@ -12,7 +12,7 @@ const router = new Router();
 router.get('/users/:id', async (ctx, next) => {
     // ctx.body = { msg: 'Hello World'};
     const userId = +ctx.params['id'];
-    const userStr = userService.getUserInfoAsString(userId);
+    const userStr = await userService.getUserInfoAsString(userId);
     ctx.body = userStr;
     await next();
 });

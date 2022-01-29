@@ -1,4 +1,4 @@
-import userEntity, { IUser } from '../entities/user';
+import User from '../models/user';
 
 
 // Export default
@@ -13,7 +13,20 @@ export default {
  * @param id 
  * @returns 
  */
-function findById(id: number): IUser {
-    const user = {id, email: 'foo@bar.com', name: 'foo bar'} as IUser;
-    return userEntity.getObj(user);
+async function findById(id: number): Promise<User | null> {
+
+    await User.query().insert({
+        email: 'foo@bar.com_' + Date.now(),
+        name: 'foo bar',
+        createdAt: new Date().toISOString(),
+    });
+
+
+    const resp: User[] = await User.query()
+        .where('id', id);
+    if (resp.length > 0) {
+        return resp[0];
+    } else {
+        return null;
+    }
 }
