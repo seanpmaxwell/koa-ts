@@ -1,5 +1,5 @@
 import userDao from '../daos/userDao';
-import userEntity, { IUser } from '../entities/userEntity';
+import { IUser, userFns } from '../entities/userEntity';
 
 
 // Constant values
@@ -25,7 +25,7 @@ async function getUserInfoAsString(id: number): Promise<string> {
     if (!user) {
         return constants.userNotFound;
     }
-    return userEntity.toString(user);
+    return userFns.toString(user);
 }
 
 

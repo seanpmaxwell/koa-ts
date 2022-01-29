@@ -15,8 +15,8 @@ export interface IUser {
     createdAt: string;
 }
 
-// Export user entity
-export default {
+// Export user functions
+export const userFns = {
     getObj,
     toString,
 };
