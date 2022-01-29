@@ -1,7 +1,7 @@
 # About
 Display TypeScript + Koa + KnexJS.
 
-<i>There are examples of querying Users with ObjectionJS and just with raw Knex.</i>
+<i>There are examples of querying Users with ObjectionJS and also with raw Knex.</i>
 
 
 #### Tutorials

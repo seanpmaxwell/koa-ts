@@ -6,7 +6,7 @@
 
 import { Model } from 'objection';
 import moment from 'moment';
-import { IUser } from '../entity/User';
+import { IUser } from '../entity/userEntity';
 
 
 export default class UserModel extends Model implements IUser {
