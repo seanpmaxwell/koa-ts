@@ -48,4 +48,4 @@ function toString(user: IUser): string {
 export default {
     getNew,
     toString,
-};
+} as const;

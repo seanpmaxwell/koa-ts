@@ -1,5 +1,6 @@
 import userDao from '../daos/userDao';
 import userSp, { IUser } from '../entities/userEntity';
+// import dogSp, { IDog } from '../entities/dogEntity';
 
 
 // Constant values

@@ -5,11 +5,11 @@
  */
 
 const constants = {
-    species: 'Canis Familiaris',
+    Species: 'Canis Familiaris',
 };
 
 
-interface IDog {
+export interface IDog {
     id: number;
     name: string;
     age: number;
@@ -49,9 +49,10 @@ function toString(dog: IDog): string {
 }
 
 
+
 // Export default
 export default {
-    constants,
+    ...constants,
     getNew,
     toString,
-};
+} as const;
