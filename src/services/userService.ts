@@ -39,4 +39,4 @@ async function addOne(user: IUser): Promise<void> {
 export default {
     getUserInfoAsString,
     addOne,
-};
+} as const;

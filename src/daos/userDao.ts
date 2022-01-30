@@ -33,7 +33,7 @@ async function addOne(user: IUser): Promise<void> {
 export default {
     findById,
     addOne,
-};
+} as const;
 
 
 // ****************************** ObjectionJS Examples ****************************** //
