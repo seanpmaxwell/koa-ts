@@ -1,5 +1,6 @@
 /**
- * Define User Entity.
+ * Define User model. Right now this is not being used. If I want to use it I should put models
+ * in a folder called /models.
  * 
  * created by Sean Maxwell, 1/28/2022
  */
