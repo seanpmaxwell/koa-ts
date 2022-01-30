@@ -3,19 +3,18 @@ import userService from '../services/userService';
 
 
 // Constants
-const router = new Router();
+const router = new Router({prefix: '/users'});
 
 // Paths
 const p = {
-    getOne: '/users/:id',
-    addOne: '/users',
+    getOne: '/:id',
+    addOne: '',
 };
 
 // API responses
 const responses = {
     postSuccess: 'User successfully posted',
 };
-
 
 
 /**

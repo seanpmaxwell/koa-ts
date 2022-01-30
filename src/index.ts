@@ -10,7 +10,8 @@ import koaLogger from 'koa-logger';
 import json from 'koa-json';
 import logger from 'jet-logger';
 import bodyParser from 'koa-bodyparser';
-import staticLogger from './routes/users';
+import apiRouter from './routes';
+import staticRouter from './routes/static';
 
 
 // Constants
@@ -23,9 +24,13 @@ app.use(bodyParser());
 app.use(json());
 app.use(koaLogger());
 
-// Routes
-app.use(staticLogger.routes());
-app.use(staticLogger.allowedMethods());
+// API Routes
+app.use(apiRouter.routes());
+app.use(apiRouter.allowedMethods());
+
+// Static router
+app.use(staticRouter.routes());
+app.use(staticRouter.allowedMethods());
 
 // Start server
 app.listen(port, () => {
