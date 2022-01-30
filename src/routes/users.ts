@@ -23,7 +23,7 @@ const responses = {
 router.get(p.getOne, async (ctx, next) => {
     // ctx.body = { msg: 'Hello World'};
     const userId = +ctx.params['id'];
-    const userStr = await userService.getUserInfoAsString(userId);
+    const userStr = await userService.getUserAsString(userId);
     ctx.body = userStr;
     await next();
 });

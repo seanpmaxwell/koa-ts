@@ -37,6 +37,6 @@ async function addOne(user: IUser): Promise<void> {
 
 // Export default
 export default {
-    getUserInfoAsString,
+    getUserAsString: getUserInfoAsString,
     addOne,
 } as const;
