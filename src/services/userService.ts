@@ -15,7 +15,7 @@ const constants = {
  * @param id 
  * @returns 
  */
-async function getUserInfoAsString(id: number): Promise<string> {
+async function getUserAsString(id: number): Promise<string> {
     const user = await userDao.findById(id);
     if (!user) {
         return constants.userNotFound;
@@ -37,6 +37,6 @@ function addOne(user: IUser): Promise<void> {
 
 // Export default
 export default {
-    getUserAsString: getUserInfoAsString,
+    getUserAsString,
     addOne,
 } as const;
