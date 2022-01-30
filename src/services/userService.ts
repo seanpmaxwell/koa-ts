@@ -1,9 +1,9 @@
 import userDao from '../daos/userDao';
-import userFns, { IUser } from '../entities/userEntity';
+import userSp, { IUser } from '../entities/userEntity';
 
 
 // Constant values
-const cnts = {
+const constants = {
     userNotFound: 'User not found',
 };
 
@@ -17,9 +17,9 @@ const cnts = {
 async function getUserInfoAsString(id: number): Promise<string> {
     const user = await userDao.findById(id);
     if (!user) {
-        return cnts.userNotFound;
+        return constants.userNotFound;
     }
-    return userFns.toString(user);
+    return userSp.toString(user);
 }
 
 

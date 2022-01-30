@@ -1,5 +1,5 @@
 /**
- * Definition for the User model.
+ * Schema for the User entity.
  * 
  * created by Sean Maxwell, 1/29/2022
  */
@@ -17,12 +17,12 @@ export interface IUser {
 
 
 /**
- * Get blank user object.
+ * Get new user instance.
  * 
  * @param user 
  * @returns 
  */
-function getObj(user?: IUser): IUser {
+function getNew(user?: IUser): IUser {
     return {
         id: user?.id ?? -1,
         email: user?.email ?? '',
@@ -46,6 +46,6 @@ function toString(user: IUser): string {
 
 // Export user functions
 export default {
-    getObj,
+    getNew,
     toString,
 };
