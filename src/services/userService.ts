@@ -1,5 +1,5 @@
 import userDao from '../daos/userDao';
-import { IUser, userFns } from '../entities/userEntity';
+import userFns, { IUser } from '../entities/userEntity';
 
 
 // Constant values

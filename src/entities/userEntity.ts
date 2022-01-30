@@ -16,7 +16,7 @@ export interface IUser {
 }
 
 // Export user functions
-export const userFns = {
+export default {
     getObj,
     toString,
 };
