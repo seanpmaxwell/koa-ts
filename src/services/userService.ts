@@ -29,8 +29,8 @@ async function getUserInfoAsString(id: number): Promise<string> {
  * 
  * @param user 
  */
-async function addOne(user: IUser): Promise<void> {
-    await userDao.addOne(user);
+function addOne(user: IUser): Promise<void> {
+    return userDao.addOne(user);
 }
 
 
