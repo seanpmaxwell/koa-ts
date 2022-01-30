@@ -3,14 +3,8 @@ import userFns, { IUser } from '../entities/userEntity';
 
 
 // Constant values
-const constants = {
+const cnts = {
     userNotFound: 'User not found',
-};
-
-// Export default
-export default {
-    getUserInfoAsString,
-    addOne,
 };
 
 
@@ -23,7 +17,7 @@ export default {
 async function getUserInfoAsString(id: number): Promise<string> {
     const user = await userDao.findById(id);
     if (!user) {
-        return constants.userNotFound;
+        return cnts.userNotFound;
     }
     return userFns.toString(user);
 }
@@ -37,3 +31,11 @@ async function getUserInfoAsString(id: number): Promise<string> {
 async function addOne(user: IUser): Promise<void> {
     await userDao.addOne(user);
 }
+
+
+
+// Export default
+export default {
+    getUserInfoAsString,
+    addOne,
+};

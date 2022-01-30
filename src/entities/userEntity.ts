@@ -15,12 +15,6 @@ export interface IUser {
     createdAt: string;
 }
 
-// Export user functions
-export default {
-    getObj,
-    toString,
-};
-
 
 /**
  * Get blank user object.
@@ -46,5 +40,12 @@ function getObj(user?: IUser): IUser {
  */
 function toString(user: IUser): string {
     const dateStr = moment(user.createdAt).format('MM/DD/YYYY');
-    return `Id: ${user.id}, Email: "${user.email}", Name: "${user.name}", Created: "${dateStr}"`;
+    return `[Id: ${user.id}, Email: "${user.email}", Name: "${user.name}", Created: "${dateStr}"]`;
 }
+
+
+// Export user functions
+export default {
+    getObj,
+    toString,
+};
