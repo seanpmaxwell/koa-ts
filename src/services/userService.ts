@@ -1,7 +1,5 @@
 import userDao from '../daos/userDao';
-import { IUser } from '../shared/models';
-import { userToStr } from '../shared/functions';
-// import dogSp, { IDog } from '../entities/dogEntity';
+import User, { IUser } from '../models/user';
 
 
 // Constant values
@@ -21,7 +19,7 @@ async function getUserAsString(id: number): Promise<string> {
     if (!user) {
         return constants.userNotFound;
     }
-    return userToStr(user);
+    return User.toString(user);
 }
 
 

@@ -1,4 +1,4 @@
-import { IUser } from '../shared/models';
+import { IUser } from '../models/user';
 import knex from './knex';
 
 
