@@ -1,4 +1,4 @@
-import { IUser } from '../entities/userEntity';
+import { IUser } from '../shared/models';
 import knex from './knex';
 
 
@@ -8,7 +8,7 @@ import knex from './knex';
  * @param id 
  * @returns 
  */
- async function findById(id: number): Promise<IUser | null> {
+async function findById(id: number): Promise<IUser | null> {
     const resp = await knex<IUser, IUser[]>('users').where('id', id);
     if (resp.length > 0) {
         return resp[0];

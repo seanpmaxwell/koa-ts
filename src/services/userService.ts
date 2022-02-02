@@ -1,5 +1,6 @@
 import userDao from '../daos/userDao';
-import userSp, { IUser } from '../entities/userEntity';
+import { IUser } from '../shared/models';
+import { userToStr } from '../shared/functions';
 // import dogSp, { IDog } from '../entities/dogEntity';
 
 
@@ -20,7 +21,7 @@ async function getUserAsString(id: number): Promise<string> {
     if (!user) {
         return constants.userNotFound;
     }
-    return userSp.toString(user);
+    return userToStr(user);
 }
 
 
