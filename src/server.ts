@@ -15,6 +15,7 @@ import staticRouter from './routes/static';
 // Constants
 const app = new Koa();
 
+
 // Middlewares
 app.use(bodyParser());
 app.use(json());
