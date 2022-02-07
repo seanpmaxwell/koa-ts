@@ -20,23 +20,21 @@ const responses = {
 /**
  * Fetch a user by id.
  */
-router.get(p.getOne, async (ctx, next) => {
+router.get(p.getOne, async (ctx) => {
     // ctx.body = { msg: 'Hello World'};
     const userId = +ctx.params['id'];
     const userStr = await userService.getUserAsString(userId);
     ctx.body = userStr;
-    await next();
 });
 
 
 /**
  * Add one user.
  */
-router.post(p.addOne, async (ctx, next) => {
+router.post(p.addOne, async (ctx) => {
     const user = ctx.request.body;
     await userService.addOne(user);
     ctx.body = responses.postSuccess;
-    await next();
 });
 
 

@@ -17,7 +17,7 @@ const constants = {
 async function getUserAsString(id: number): Promise<string> {
     const user = await userDao.findById(id);
     if (!user) {
-        return constants.userNotFound;
+        throw Error(constants.userNotFound);
     }
     return User.toString(user);
 }
