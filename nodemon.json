@@ -6,5 +6,5 @@
     "ignore": [
         "src/public"
     ],
-    "exec": "ts-node ./src"
+    "exec": "ts-node -r tsconfig-paths/register ./src"
 }

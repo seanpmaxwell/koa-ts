@@ -1,4 +1,4 @@
-import userDao from '../daos/userDao';
+import userDao from '@daos/user-dao';
 import User, { IUser } from '../models/user';
 
 
@@ -31,7 +31,6 @@ async function getUserAsString(id: number): Promise<string> {
 function addOne(user: IUser): Promise<void> {
     return userDao.addOne(user);
 }
-
 
 
 // Export default

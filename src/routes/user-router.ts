@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import userService from '../services/user-service';
+import userService from '@services/user-service';
 
 
 // Paths

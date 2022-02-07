@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import userRouter from './users';
+import userRouter from './user-router';
 
 
 const router = new Router({prefix: '/api'});
