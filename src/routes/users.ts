@@ -2,11 +2,9 @@ import Router from 'koa-router';
 import userService from '../services/userService';
 
 
-// Constants
-const router = new Router({prefix: '/users'});
-
 // Paths
 const p = {
+    prefix: '/users',
     getOne: '/:id',
     addOne: '',
 };
@@ -15,6 +13,10 @@ const p = {
 const responses = {
     postSuccess: 'User successfully posted',
 };
+
+// Constants
+const router = new Router({prefix: p.prefix});
+
 
 
 /**
